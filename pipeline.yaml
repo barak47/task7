@@ -1,0 +1,3 @@
+dvc run -n collect_data -d data_collection_script.py -o raw_data.csv python data_collection_script.py
+dvc run -n preprocess_data -d raw_data.csv -d data_preprocessing_script.py -o processed_data.csv python data_preprocessing_script.py
+dvc run -n train_model -d processed_data.csv -d model_training_script.py -o model.pkl python model_training_script.py
